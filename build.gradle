@@ -1,0 +1,30 @@
+apply plugin: 'java'
+
+repositories {
+    jcenter()
+    maven { url 'https://jitpack.io' }
+}
+
+ext {
+	gemEngineVersion = '8a255587fc'
+	gemEngineBasePackVersion = 'cd40413a1b'
+	lombokVersion = "1.16.16"
+}
+
+dependencies {
+	compileOnly "com.github.Ughuuu:GemMaker:$gemEngineVersion"
+	compileOnly "org.projectlombok:lombok:$lombokVersion"
+   	compile "com.github.Ughuuu:GemEngineBasePack:$gemEngineBasePackVersion"
+}
+sourceSets{
+	src
+	main{
+		java{
+			srcDir 'src'
+		}
+	}
+}
+    
+jar{
+	from sourceSets.src.output
+}
