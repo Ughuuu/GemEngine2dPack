@@ -97,5 +97,6 @@ public class LabelSystem extends SystemBase implements ComponentUpdaterListener 
 		font.setColor(Color.valueOf(textComponent.getHexColor()));
 		font.draw(SpriteSystem.spriteBatch, textComponent.getText(), textComponent.getOffsetX(),
 				textComponent.getOffsetY(), textComponent.getWidth(), textComponent.getHAlign(), textComponent.isWrap());
+		log.debug(textComponent);
 	}
 }
